@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
+
 int main() {
     int a = 3;
     char b = 'C';
-    printf("%d\n%c", a, b);
+    cout << a << "\n" << b;
     return 0;
 }
