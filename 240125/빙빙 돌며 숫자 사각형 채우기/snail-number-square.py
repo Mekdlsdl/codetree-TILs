@@ -2,8 +2,9 @@ n, m = map(int, input().split())
 
 answer = [[0] * m for _ in range(n)]
 
+
 def in_range(x, y):
-    return x >= 0 and x < m and y >= 0 and y < n
+    return x >= 0 and x < n and y >= 0 and y < m
 
 dx, dy = [0, 1, 0, -1], [1, 0, -1, 0]
 dir_num = 0
@@ -24,7 +25,7 @@ for i in range(2, n * m + 1):
     answer[x][y] = i
 
 
-for j in range(m):
-    for k in range(n):
+for j in range(n):
+    for k in range(m):
         print(answer[j][k], end = ' ')
     print()
