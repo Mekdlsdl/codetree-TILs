@@ -1,26 +1,21 @@
 n, t = map(int, input().split())
+u = list(map(int, input().split()))
+d = list(map(int, input().split()))
 
-arr = [list(map(int, input().split())) for _ in range(2)]
+while t > 0:
+    temp = u[-1]
 
-arr1 = []
+    for i in range(n-1, 0, -1):
+        u[i] = u[i-1]
 
-for i in range(2):
-    for j in range(n):
-        arr1.append(arr[i][j])
+    u[0] = d[-1]
 
+    for j in range(n-1, 0, -1):
+        d[j] = d[j-1]
 
-while (t>0):
-    temp = arr1[-1]
-
-    for i in range(len(arr1) - 1, 0, -1):
-        arr1[i] = arr1[i - 1]
-
-    arr1[0] = temp
+    d[0] = temp
 
     t -= 1
 
-for i in range(n):
-    print(arr1[i], end=' ')
-print()
-for i in range(n,n*2):
-    print(arr1[i], end=' ')
+print(*u)
+print(*d)
