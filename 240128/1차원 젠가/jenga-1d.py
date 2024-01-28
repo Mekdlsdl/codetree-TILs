@@ -3,24 +3,19 @@ block = [int(input()) for _ in range(n)]
 s1, e1 = map(int, input().split())
 s2, e2 = map(int, input().split())
 
-temp = [0 for _ in range(n)]
-cnt = 0
+temp = []
 for i in range(n):
     if i < s1 - 1 or i > e1 - 1:
-        temp[cnt] = block[i]
-        cnt += 1
+        temp.append(block[i])
     
+temp1 = []
 
-temp1 = [0 for _ in range(cnt)]
-
-cnt1 = 0
-for i in range(cnt):
+for i in range(len(temp)):
     if i < s2 - 1 or i > e2 - 1:
-        temp1[cnt1] = temp[i]
-        cnt1 += 1
+        temp1.append(temp[i])
     
 
-print(cnt1)
+print(len(temp1))
 for t in temp1:
     if t == 0:
         continue
