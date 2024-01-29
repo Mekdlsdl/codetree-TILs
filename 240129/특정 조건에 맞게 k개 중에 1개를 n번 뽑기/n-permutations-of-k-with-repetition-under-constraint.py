@@ -13,7 +13,7 @@ def not_print():
         
 
 def choose(c_num):
-    if not_print() >= 2:
+    if c_num >= 3 and not_print() >= 2:
             return
 
     if c_num >= n + 1:
