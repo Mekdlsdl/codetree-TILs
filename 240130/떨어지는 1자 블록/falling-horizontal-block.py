@@ -10,6 +10,9 @@ def drop_block():
                 floor = min(j - 1, floor)
                 break
 
+    if floor == n + 1:
+        floor = n - 1
+
     for i in range(s, e):
         arr[floor][i] = 1
 
