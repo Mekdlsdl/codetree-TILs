@@ -4,11 +4,14 @@ arr = [list(map(int, input().split())) for _ in range(n)]
 def drop_block():
     floor = n + 1
     s, e = k - 1, k + m - 1
-    for i in range(s, e):
-        for j in range(n):
-            if arr[j][i] == 1:
-                floor = min(j - 1, floor)
+    for i in range(n):
+        for j in range(s, e):
+            if arr[i][j] == 1:
+                floor = i - 1
                 break
+
+        if floor != n + 1:
+            break
 
     if floor == n + 1:
         floor = n - 1
