@@ -7,12 +7,11 @@ def in_range(x, y):
     return x >= 0 and x < n and y >= 0 and y < n
 
 
-def change_loc(ori_pos, new_pos, num):
+def change_loc(ori_pos, new_pos):
     x, y = ori_pos
     nx, ny = new_pos
 
-    arr[x][y] = arr[nx][ny]
-    arr[nx][ny] = num
+    arr[x][y], arr[nx][ny] = arr[nx][ny], arr[x][y]
 
 
 def find_max(num):
@@ -37,7 +36,7 @@ def find_max(num):
                         max_n = arr[nx][ny]
                         max_pos = (nx, ny)
 
-                change_loc((i, j), max_pos, num)
+                change_loc((i, j), max_pos)
 
 
 for _ in range(m):
