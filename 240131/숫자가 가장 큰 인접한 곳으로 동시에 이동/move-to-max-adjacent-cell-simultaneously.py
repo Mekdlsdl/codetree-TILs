@@ -26,8 +26,6 @@ def remove_beads(temp):
                 b_loc[i][j] = 0
             elif temp[i][j] == 1:
                 b_loc[i][j] = 1
-            else:
-                pass
 
 
 # 구슬 한개 움직임
@@ -49,16 +47,16 @@ def move_bead(pos):
     return max_pos
 
 
-# 총 구슬 수 세기
-def total_cnt():
-    cnt = 0
+# # 총 구슬 수 세기
+# def total_cnt():
+#     cnt = 0
 
-    for i in range(n):
-        for j in range(n):
-            if b_loc[i][j] == 1:
-                cnt += 1
+#     for i in range(n):
+#         for j in range(n):
+#             if b_loc[i][j] == 1:
+#                 cnt += 1
 
-    return cnt
+#     return cnt
 
 
 def simulate():
@@ -79,4 +77,11 @@ def simulate():
 for _ in range(t):
     simulate()
 
-print(total_cnt())
+cnt = 0
+
+for i in range(n):
+    for j in range(n):
+        if b_loc[i][j] == 1:
+            cnt += 1
+
+print(cnt)
