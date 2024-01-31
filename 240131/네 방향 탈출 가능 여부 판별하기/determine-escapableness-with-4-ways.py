@@ -18,8 +18,7 @@ def can_go(x, y):
 
 def bfs():
     while q:
-        cv = q.popleft()
-        x, y = cv
+        x, y = q.popleft()
 
         for dx, dy in zip(dxs, dys):
             nx, ny = x + dx, y + dy
