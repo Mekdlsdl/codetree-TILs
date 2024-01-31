@@ -1,7 +1,7 @@
 n = int(input())
 
 ans = []
-visited = [0] * (n + 1)
+visited = [False] * (n + 1)
 
 def choose(cur_n):
     if cur_n == n + 1:
@@ -13,11 +13,11 @@ def choose(cur_n):
             continue
 
         ans.append(i)
-        visited[i] = 1
+        visited[i] = True
 
         choose(cur_n + 1)
 
         ans.pop()
-        visited[i] = 0
+        visited[i] = False
 
 choose(1)
