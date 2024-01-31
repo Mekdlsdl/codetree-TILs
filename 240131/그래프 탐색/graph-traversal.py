@@ -15,9 +15,16 @@ def dfs(vertex):
 
     for cv in graph[vertex]:
         if not visited[cv]:
-            cnt += 1
             visited[cv] = True
             dfs(cv)
 
 dfs(1)
-print(cnt - 1)
+visited[1] = False
+
+cnt = 0
+
+for i in range(n + 1):
+    if visited[i] == True:
+        cnt += 1
+
+print(cnt)
