@@ -17,15 +17,16 @@ def can_go(x, y):
 
 
 def bfs():
-    cv = q.popleft()
-    x, y = cv
+    while q:
+        cv = q.popleft()
+        x, y = cv
 
-    for dx, dy in zip(dxs, dys):
-        nx, ny = x + dx, y + dy
+        for dx, dy in zip(dxs, dys):
+            nx, ny = x + dx, y + dy
 
-        if can_go(nx, ny):
-            visited[nx][ny] = 1
-            q.append((nx, ny))
+            if can_go(nx, ny):
+                visited[nx][ny] = 1
+                q.append((nx, ny))
 
 
 q.append((0, 0))
