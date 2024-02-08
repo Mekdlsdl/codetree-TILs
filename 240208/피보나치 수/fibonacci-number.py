@@ -1,10 +1,15 @@
 n = int(input())
 
-dp = [0] * (n + 1)
+memo = [0] * (n + 2)
 
-dp[1] = 1
+memo[1] = memo[2] = 1
 
-for i in range(n - 1):
-    dp[i + 2] = dp[i] + dp[i + 1]
+def fibo(n):
+    if memo[n] != 0:
+        return memo[n]
 
-print(dp[n])
+    memo[n] = fibo(n - 1) + fibo(n - 2)
+    return memo[n]
+
+fibo(n)
+print(memo[n])
