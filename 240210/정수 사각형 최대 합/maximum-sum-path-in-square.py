@@ -21,4 +21,4 @@ for i in range(1, n):
         dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]) + arr[i][j]
 
 
-print(max(dp[-1]))
+print(dp[-1][-1])
