@@ -9,7 +9,7 @@ int main() {
 
     vector<int> remains(a);
 
-    while (a >= 1) {
+    while (a > 1) {
         remains[a % b] += 1;
         a = a / b;
     }
