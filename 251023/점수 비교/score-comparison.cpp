@@ -6,7 +6,7 @@ int main() {
     int am, bm, ae, be;
     cin >> am >> bm >> ae >> be;
 
-    cout << ((am > bm) && (ae > be));
-    
+    cout << ((am >= bm) && (ae >= be));
+
     return 0;
 }
