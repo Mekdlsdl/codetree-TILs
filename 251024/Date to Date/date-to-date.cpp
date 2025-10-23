@@ -9,7 +9,7 @@ int main() {
 
     // Please write your code here.
     int day = 1;
-    int days[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int days[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
     while (true) {
         if (m1 == m2 && d1 == d2) break;
@@ -17,7 +17,7 @@ int main() {
         d1++;
         day++;
 
-        if (days[m1] == d1) {
+        if (days[m1 - 1] < d1) {
             d1 = 1;
             m1++;
         }
