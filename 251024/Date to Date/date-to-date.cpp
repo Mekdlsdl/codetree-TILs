@@ -8,7 +8,7 @@ int main() {
     cin >> m1 >> d1 >> m2 >> d2;
 
     // Please write your code here.
-    int day = 0;
+    int day = 1;
     int days[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     while (true) {
