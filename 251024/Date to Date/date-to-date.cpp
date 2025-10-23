@@ -18,7 +18,7 @@ int main() {
         day++;
 
         if (days[m1] == d1) {
-            d1 = 0;
+            d1 = 1;
             m1++;
         }
     }
