@@ -15,7 +15,7 @@ int main() {
         cin >> A[i] >> B[i];
 
         for (int j = A[i]; j <= B[i]; j++) {
-            arr[i]++;
+            arr[j]++;
         }
     }
 
