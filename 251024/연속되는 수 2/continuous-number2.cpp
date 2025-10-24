@@ -20,9 +20,10 @@ int main() {
         cnt++;
 
         if (i == 0 || arr[i - 1] != arr[i]) {
-            ans = max(ans, cnt);
-            cnt = 0;
+            cnt = 1;
         }
+        
+        ans = max(ans, cnt);
     }
 
     cout << ans;
