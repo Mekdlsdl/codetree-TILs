@@ -14,7 +14,7 @@ int main() {
     }
 
     // Please write your code here.
-    map<char, int> m = {{'N', 0}, {'E', 1}, {'S', 2}, {'w', 3}};
+    map<char, int> m = {{'N', 0}, {'E', 1}, {'S', 2}, {'W', 3}};
     int dx[4] = { 0, 1, 0, -1 }, dy[4] = { 1, 0, -1, 0 };
     int x = 0, y = 0;
 
@@ -24,6 +24,8 @@ int main() {
 
         x = x + dx[m[d]] * t;
         y = y + dy[m[d]] * t;
+
+        // cout << x << " " << y << endl;
     }
 
     cout << x << " " << y;
