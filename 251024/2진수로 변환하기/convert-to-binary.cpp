@@ -12,7 +12,7 @@ int main() {
     vector<int> ans;
 
     while (true) {
-        if (n == 1) {
+        if (n <= 1) {
             ans.push_back(n);
             break;
         }
