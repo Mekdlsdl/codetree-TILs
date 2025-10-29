@@ -6,9 +6,23 @@ public class Codetree
     {
         // Please write your code here.
         int n = int.Parse(Console.ReadLine());
-        int[] nums = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        // int[] nums = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+        int[] nums = new int[n];
+        int idx = 0;
 
-        int[] cnt = new int[100000];
+        while (idx < n)
+        {
+            string line = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(line)) continue;
+
+            foreach (var s in line.Split(' ', StringSplitOptions.RemoveEmptyEntries))
+            {
+                nums[idx++] = int.Parse(s);
+                if (idx == n) break;
+            }
+        }
+
+        int[] cnt = new int[100001];
         int ans = 0;
         int j = 0;
 
