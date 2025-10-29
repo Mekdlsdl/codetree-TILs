@@ -16,11 +16,19 @@ int main() {
     int ans = 100001;
     for (int i = 0; i < n; i++) {
         int sum = arr[i];
+
+        if (sum >= s) {
+            ans = min(ans, 1);
+            // cout << i << " " << ans << '\n';
+        }
         
         for (int j = i + 1; j < n; j++) {
-            if (sum > s) ans = min(ans, j - i);
-
             sum += arr[j];
+
+            if (sum >= s) {
+                ans = min(ans, j - i + 1);
+                // cout << i << " " << j << " " << ans << '\n';
+            }
         }
     }
 
