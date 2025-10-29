@@ -14,22 +14,20 @@ int main() {
 
     // Please write your code here.
     int ans = 100001;
+
+    int sum = 0;
+    int j = 0;
+
     for (int i = 0; i < n; i++) {
-        int sum = arr[i];
-
-        if (sum >= s) {
-            ans = min(ans, 1);
-            // cout << i << " " << ans << '\n';
-        }
         
-        for (int j = i + 1; j < n; j++) {
+        while (j < n && sum < s) {
             sum += arr[j];
-
-            if (sum >= s) {
-                ans = min(ans, j - i + 1);
-                // cout << i << " " << j << " " << ans << '\n';
-            }
+            j++;
         }
+
+        if (sum >= s) ans = min(ans, j - i);
+        
+        sum -= arr[i];
     }
 
     if (ans == 100001) ans = -1;
