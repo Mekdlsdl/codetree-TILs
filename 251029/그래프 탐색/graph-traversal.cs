@@ -23,9 +23,12 @@ public class Codetree
 
         Queue<int> q = new Queue<int>();
 
-        for (int i = 0; i < graph[1].Count; i++) {
-            q.Enqueue(graph[1][i]);
+        if (graph[1] != null) {
+            for (int i = 0; i < graph[1].Count; i++) {
+                q.Enqueue(graph[1][i]);
+            }
         }
+        
 
         int ans = 0;
         bool[] visited = new bool[n + 1];
