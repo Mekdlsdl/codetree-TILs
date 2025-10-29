@@ -21,7 +21,14 @@ public class Codetree
         graph = new int[n][];
         for (int i = 0; i < n; i++)
         {
-            graph[i] = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            // graph[i] = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+            string line = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(line)) { i--; continue; }
+
+            graph[i] = Array.ConvertAll(
+                line.Split(' ', StringSplitOptions.RemoveEmptyEntries),
+                int.Parse
+            );
         }
 
         Queue<(int, int)> q = new Queue<(int, int)>();
