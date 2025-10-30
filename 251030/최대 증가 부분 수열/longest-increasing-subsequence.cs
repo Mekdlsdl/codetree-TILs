@@ -25,12 +25,12 @@ public class Codetree
         for (int i = 1; i < n; i++) {
             for (int j = i - 1; j >= 0; j--) {
                 if (arr[i] > arr[j]) {
-                    dp[i] = dp[j] + 1;
-                    break;
+                    dp[i] = Math.Max(dp[i], dp[j]);
+                    // break;
                 }
             }
 
-            if (dp[i] == 0) dp[i] = 1;
+            dp[i]++;
         }
 
         int ans = -1;
