@@ -29,6 +29,8 @@ public class Codetree
                     break;
                 }
             }
+
+            if (dp[i] == 0) dp[i] = 1;
         }
 
         int ans = -1;
