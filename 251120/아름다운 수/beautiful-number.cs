@@ -7,41 +7,24 @@ public class Codetree
 
     static int ans = 0;
 
-    public static bool Check() {
-        int idx = 0;
-        int cnt = 0;
-
-        while (idx < n) {
-            cnt = 0;
-            int num = selected[idx];
-
-            if ((idx + num) > n) return false;
-
-            for (int i = idx; i < idx + num; i++) {
-                if (num != selected[i]) {
-                    idx = i + 1;
-                    break;
-                }
-                cnt++;
-            }
-
-            if (cnt % num != 0) return false;
-            idx += num;
-        }
-
-        return true;
-    }
 
     public static void Choose(int cnt) {
         if (cnt == n + 1) {
-            if (Check()) ans++;
+            ans++;
 
             return;
         }
 
+        if (cnt > n + 1) return;
+
         for (int i = 1; i <= 4; i++) {
-            selected[cnt - 1] = i;
-            Choose(cnt + 1);
+            if ((cnt + i - 1) > n) return;
+
+            for (int j = 0; j < i; j++) {
+                selected[cnt + j - 1] = i;
+            }
+            
+            Choose(cnt + i);
         }
     }
 
@@ -52,7 +35,6 @@ public class Codetree
 
         selected = new int[n];
 
-        selected[0] = 1;
         Choose(1);
 
         Console.WriteLine(ans);
