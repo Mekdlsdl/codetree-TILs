@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <climits>
 
 using namespace std;
 
@@ -9,7 +10,7 @@ map<char, int> alpha;
 int selected[101];
 
 int n;
-int ans = 0;
+int ans = INT_MIN;
 
 
 void Calculate() {
@@ -31,7 +32,9 @@ void Calculate() {
                 break;
         }
 
-        op = expression[i + 1];
+        if (i + 1 < expression.size()) {
+            op = expression[i + 1];
+        }
     }
 
     ans = max(result, ans);
