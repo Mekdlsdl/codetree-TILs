@@ -19,7 +19,7 @@ bool CanGo(int x, int y, int t) {
 }
 
 void Choose(int x, int y, int cnt) {
-    if (num[x][y] == (n * n) || cnt > (n * n - 1)) {
+    if (num[x][y] == (n * n) || cnt >= (n * n - 1)) {
         ans = max(ans, cnt);
         return;
     }
@@ -37,8 +37,7 @@ void Choose(int x, int y, int cnt) {
             Choose(nx, ny, cnt + 1);
         }
         else {
-            ans = max(ans, cnt + 1);
-            return;
+            ans = max(ans, cnt);
         }
     }
 }
