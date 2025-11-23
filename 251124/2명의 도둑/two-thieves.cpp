@@ -8,6 +8,8 @@ int weight[10][10];
 bool visited[10][10] = {false};
 
 int t[2][5] = {0};
+bool selected[5] = {false};
+int max_t = 0;
 
 int ans = 0;
 
@@ -20,6 +22,34 @@ bool CanGo(int x, int y) {
     }
 
     return true;
+}
+
+void Check2(int t_num) {
+    int sum = 0;
+    int sum2 = 0;
+
+    for (int i = 0; i < m; i++) {
+        if (selected[i]) {
+            int w = t[t_num][i];
+            sum += w;
+            sum2 += w * w;
+        }
+    }
+
+    if (sum <= c) max_t = max(max_t, sum2);
+}
+
+void Choose2(int cnt, int t_num) {
+    if (cnt == m) {
+        Check2(t_num);
+        return;
+    }
+
+    selected[cnt] = true;
+    Choose2(cnt + 1, t_num);
+
+    selected[cnt] = false;
+    Choose2(cnt + 1, t_num);
 }
 
 void Check() {
@@ -37,7 +67,12 @@ void Check() {
         for (int j = m - 1; j >= 0; j--) {
             w = t[i][j];
 
-            if (sum + w > c) break;
+            if (sum + w > c) {
+                max_t = 0;
+                Choose2(0, i);
+                sum_2 = max_t;
+                break;
+            }
 
             sum += w;
             sum_2 += w * w;
