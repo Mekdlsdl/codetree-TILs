@@ -6,14 +6,13 @@ int n;
 int x[1000];
 char dir[1000];
 
-// int black[2000] = {0};
-// int white[2000] = {0};
+const int MAX_IDX = 200001;
 
 // 인덱스 ->  0 = 흰, 1 = 검, 2 = 회
-int tile[2][2000] = {0};    // 칠한 횟수
-int color[2000];            // 마지막 컬러
+int tile[2][MAX_IDX] = {0};    // 칠한 횟수
+int color[MAX_IDX];            // 마지막 컬러
 int ans[3] = {0};           // 답
-int offset = 1000;
+int offset = 100000;
 
 int main() {
     cin >> n;
@@ -24,7 +23,7 @@ int main() {
 
     // Please write your code here.
 
-    for (int i = 0; i < 2000; i++) {
+    for (int i = 0; i < MAX_IDX; i++) {
         color[i] = -1;
     }
 
@@ -52,7 +51,7 @@ int main() {
         }
     }
 
-    for (int i = 0; i < 2000; i++) {
+    for (int i = 0; i < MAX_IDX; i++) {
         if (tile[0][i] >= 2 && tile[1][i] >= 2) {
             ans[2]++;
         }
@@ -61,7 +60,6 @@ int main() {
         }
     }
 
-    // cout << ans[0] << " " << ans[1]
     for (int i = 0; i < 3; i++) {
         cout << ans[i] << " ";
     }
