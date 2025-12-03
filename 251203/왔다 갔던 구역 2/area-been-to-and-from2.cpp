@@ -6,7 +6,7 @@ int n;
 int x[100];
 char dir[100];
 
-int arr[2010] = {0};
+int arr[2000] = {0};
 int offset = 1000;
 int ans = 0;
 
@@ -26,8 +26,10 @@ int main() {
         else d = -1;
 
         for (int j = 0; j < x[i]; j++) {
-            nx += d;
-            arr[nx + offset]++;
+            int nx2 = nx + d;
+            int seg = min(nx, nx2) + offset;
+            arr[seg]++;
+            nx = nx2;
         }
     }
 
