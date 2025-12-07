@@ -22,8 +22,8 @@ int main() {
         y1[i] += offset;
         y2[i] += offset;
 
-        for (int j = x1[i]; j <= x2[i]; j++) {
-            for (int k = y1[i]; k <= y2[i]; k++) {
+        for (int j = x1[i]; j < x2[i]; j++) {
+            for (int k = y1[i]; k < y2[i]; k++) {
                 arr[j][k] = (i == 0) ? true : false;
             }
         }
@@ -47,9 +47,9 @@ int main() {
     
     // cout << sx << " " << ex << " " << sy << " " << ey << '\n';
     
-    int ans = (ex - sx) * (ey - sy);
+    int ans = (ex - sx + 1) * (ey - sy + 1);
     if (!chk) ans = 0;
-    
+
     cout << ans;
 
 
