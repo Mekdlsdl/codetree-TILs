@@ -29,9 +29,13 @@ int main() {
         }
     }
 
+    bool chk = false;
+
     for (int i = x1[0]; i <= x2[0]; i++) {
         for (int j = y1[0]; j <= y2[0]; j++) {
             if (arr[i][j]) {
+                chk = true;
+
                 sx = min(sx, i);
                 ex = max(ex, i);
 
@@ -43,8 +47,9 @@ int main() {
     
     // cout << sx << " " << ex << " " << sy << " " << ey << '\n';
     
-
     int ans = (ex - sx) * (ey - sy);
+    if (!chk) ans = 0;
+    
     cout << ans;
 
 
