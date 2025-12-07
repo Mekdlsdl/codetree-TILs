@@ -17,6 +17,11 @@ int main() {
 
     // Please write your code here.
     for (int i = 0; i <= 1; i++) {
+        x1[i] += offset;
+        x2[i] += offset;
+        y1[i] += offset;
+        y2[i] += offset;
+        
         for (int j = x1[i]; j <= x2[i]; j++) {
             for (int k = y1[i]; k <= y2[i]; k++) {
                 arr[j][k] = (i == 0) ? true : false;
