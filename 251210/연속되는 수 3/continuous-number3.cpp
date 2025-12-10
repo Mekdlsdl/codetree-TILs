@@ -20,8 +20,7 @@ int main() {
     for (int i = 0; i < N; i++) {
         int num = arr[i];
 
-        if ((chk && num < 0) || (!chk && num > 0)) {
-            
+        if ((chk && num < 0) || (!chk && num > 0)) {           
             cnt = 1;
             chk = (num > 0) ? true : false;
         }
