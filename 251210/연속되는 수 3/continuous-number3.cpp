@@ -27,6 +27,7 @@ int main() {
         }
         else {
             cnt++;
+            ans = max(ans, cnt);
         }
     }
 
