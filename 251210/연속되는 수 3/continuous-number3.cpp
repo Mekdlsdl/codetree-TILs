@@ -5,7 +5,7 @@ using namespace std;
 int N;
 int arr[1000];
 
-int ans = 0;
+int ans = 1;
 bool chk = true; // true = 0보다 큼, false = 0보다 작음
 
 int main() {
