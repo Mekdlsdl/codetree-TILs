@@ -47,15 +47,34 @@ int main() {
         }
     }
 
+    
+    int s = l.size();
+    int s_b = l_b.size();
+
+    if (s > s_b) {
+        for (int i = 0; i < s - s_b; i++) {
+            l_b.push_back(l_b[s_b - 1]);
+        }
+    }
+    else if (s < s_b) {
+        for (int i = 0; i < s_b - s; i++) {
+            l.push_back(l[s - 1]);
+        }
+    }
+
 
     int cnt = 0;
-    int c = 0;
+    bool e = true;
 
     for (int i = 0; i < l.size(); i++) {
-        if (l[i] == l_b[i] && l[i] != c) {
+        // cout << l[i] << " " << l_b[i] << '\n';
+
+        if (l[i] == l_b[i] && !e) {
             cnt++;
-            c = l[i];
+            // cout << "here" << '\n';
+            e = true;
         }
+        else if (l[i] != l_b[i]) e = false;
     }
 
     cout << cnt;
